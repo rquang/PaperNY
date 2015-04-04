@@ -60,7 +60,7 @@ body {
 }
 
 #header .top {
-	height: 64px;
+	height: 58px;
 }
 
 #header .top .content, #main .top .content, #body, #footer .content, #dvd > .body, #cats > .body, #shop > .wrapper, #jobs .wrap{
@@ -272,9 +272,9 @@ body {
 }
 
 #header .image .title.front .content .white {
+	font-family: SourceSansPro-Semibold;
 	padding-top: 30px;
 	color: #FFFFFF;
-	weight: bold;
 	line-height: 60px;
 	height: 60px;
 }
@@ -294,7 +294,7 @@ body {
 	font-weight: normal;
 	font-size: 45px;
 	margin: 0;
-	padding: 30px 0;
+	padding: 60px 0;
 }
 
 #body h1 > span, #jobs h1 > span, #dvd h1 > span, #cats h1 > span {
@@ -325,6 +325,10 @@ body {
 	line-height: 1.7em;
 	font-size: 1.1em;
 }
+
+#body p a:link{
+	color: #0980C9;
+	text-decoration: none;
 
 #body.front .first {
 	padding-top: 50px;
@@ -1356,7 +1360,7 @@ body {
 
 #shop .top > div {
 	float: right;
-	background-color: #E5EBEC;
+	background-color: #EDF2F2;
 	height: 60px;
 }
 
@@ -1366,7 +1370,7 @@ body {
 	background-color: transparent;
 	border-style: solid;
 	border-width: 0 60px 60px 0;
-	border-color: transparent #E5EBEC transparent transparent;
+	border-color: transparent #EDF2F2 transparent transparent;
 }
 
 #shop .top .content {
