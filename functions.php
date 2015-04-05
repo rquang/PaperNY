@@ -13,7 +13,7 @@ function create_posttype() {
       'public' => true,
       'has_archive' => true,
       'rewrite' => array('slug' => 'the-latest'),
-	  'taxonomies' => array('post_tag'),
+	  'taxonomies' => array('post_tag', 'category'),
 	  'supports' => array(
 		  'title',
 		  'editor',
