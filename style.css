@@ -32,18 +32,18 @@ html, body, #wrapper, #header, #main, #footer {padding:0; margin:0;}
 }
 
 .icon.sm {
-	width: 50px;
-	height: 50px;
+	width: 45px;
+	height: 45px;
 	background-image: url("/wordpress/wp-content/themes/paperny/images/icons.png");
 	background-repeat: no-repeat;
 }
 
 .icon.sm.facebook {background-position: 0 0;}
-.icon.sm.facebook:hover {background-position: -55px 0;}
-.icon.sm.vimeo {background-position: 0 -55px;}
-.icon.sm.vimeo:hover {background-position: -55px -55px;}
-.icon.sm.twitter {background-position: 0 -110px;}
-.icon.sm.twitter:hover {background-position: -55px -110px;}
+.icon.sm.facebook:hover {background-position: -50px 0;}
+.icon.sm.vimeo {background-position: 0 -50px;}
+.icon.sm.vimeo:hover {background-position: -50px -50px;}
+.icon.sm.twitter {background-position: 0 -100px;}
+.icon.sm.twitter:hover {background-position: -50px -100px;}
 
 form.search {display: inline;}
 form.search input {border:0;margin-left:20px;height:32px;}
@@ -174,7 +174,7 @@ body {
 
 #header .top .content .links {
 	position: relative;
-	top: 7px;
+	top: 4px;
 	width: 100%;
 	height: 58px;
 	text-align: right;
