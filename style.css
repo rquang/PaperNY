@@ -124,7 +124,7 @@ body {
 #header .top .content .nav-holder .nav > li > a {
 	text-transform: uppercase;
 	display: inline-block;
-	height: 60px;
+	height: 53px;
 	line-height: 60px;
 	width: 100%;
 	border-bottom: 4px solid #054075;
@@ -174,7 +174,7 @@ body {
 
 #header .top .content .links {
 	position: relative;
-	top: 4px;
+	top: 7px;
 	width: 100%;
 	height: 58px;
 	text-align: right;
@@ -187,7 +187,7 @@ body {
 
 #header .image {
 	width: 100%;
-	min-height: 200px;
+	min-height: 300px;
 	position: relative;
 	background: gray;
 }

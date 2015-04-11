@@ -1,6 +1,6 @@
 <?php get_header(); the_post();?>	
 		<div class="image">
-			<img src="<?php the_field('header'); ?>">
+			<?php if(get_field('header')){ ?><img src="<?php the_field('header'); ?>"><?php } ?>
 			<div class="news-title">
 				<div class="wrapper"><div class="text"><?php the_title() ?></div></div>
 			</div>
@@ -19,6 +19,9 @@
 	</div>
 </div>
 <style>
+#header .icon.sm {
+	background-image: url("/wordpress/wp-content/themes/paperny/images/icons_news.png");
+}
 #header .top {
 	background: #000000;
 }
