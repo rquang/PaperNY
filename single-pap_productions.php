@@ -35,7 +35,7 @@
 		<div class="social">
 		<?php foreach(array('facebook'=>'', 'twitter'=>'https://twitter.com/') as $key=>$url){
 			if(get_field($key)){
-				echo '<a href="',$url,get_field($key),'"><div class="icon sm '.$key.'"></div></a>';
+				echo '<a target="_blank" href="',$url,get_field($key),'"><div class="icon sm '.$key.'"></div></a>';
 			}
 		}
 		?>
