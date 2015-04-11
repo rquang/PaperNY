@@ -1842,8 +1842,9 @@ body {
 	#header .top .content .mobile-menu {
 		float: right;
 		color: #366AA5;
-		font-size: 50px;
+		font-size: 2.5em;
 		cursor: pointer;
+		display: block;
 	}
 
 	#header .top .content .nav-holder .nav > .empty, #header .top .content .nav-holder .nav > .media {
@@ -1869,7 +1870,33 @@ body {
 		background: #054075;
 		display: none;
 		position: absolute;
-		top: 64px;
+		top: 58px;
 		height: auto;
+	}
+
+	#header .image {
+		min-height: 100px;
+	}
+
+	#body.front .first .reel, #body.front .first .news {
+		float: none;
+		width: 100%;
+		padding: 0;
+	}
+
+	#body.front .second .productions {
+		width: 55%;
+	}
+
+	#body.front .second .productions .production {
+		width: 90%;
+	}
+
+	#body.front .second .productions a:nth-child(n+3) {
+		display: none;
+	}
+
+	#body.front .second .twitter {
+		width: 45%;
 	}
 }
