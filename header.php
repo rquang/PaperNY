@@ -41,9 +41,9 @@ foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 				<div class="papernylogo"><div class="main">Paperny</div><div class="second">Entertainment</div><div class="end">an <b>entertainment one</b> company</div></div>
 				<div class="mobile-menu">☰</div>
 				<div class="mobile-links">
-					<div class="icon sm facebook"></div>
-					<div class="icon sm twitter"></div>
-					<div class="icon sm vimeo"></div>
+					<a target="_blank" href="http://www.facebook.com/PapernyEntertainment"><div class="icon sm facebook"></div></a>
+					<a target="_blank" href="http://twitter.com/Paperny"><div class="icon sm twitter"></div></a>
+					<a target="_blank" href="//player.vimeo.com/video/118300083" class="fancybox fancybox.iframe"><div class="icon sm vimeo"></div></a>
 				</div>
 				<div class="nav-holder">
 					<ul class="nav">
@@ -78,9 +78,9 @@ foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 					</li>
 					<li class="media">
 						<div class="links">
-							<a href="http://www.facebook.com/PapernyEntertainment"><div class="icon sm facebook"></div></a>
-							<a href="http://twitter.com/Paperny"><div class="icon sm twitter"></div></a>
-							<a href="//player.vimeo.com/video/118300083" class="fancybox fancybox.iframe"><div class="icon sm vimeo"></div></a>
+							<a target="_blank" href="http://www.facebook.com/PapernyEntertainment"><div class="icon sm facebook"></div></a>
+							<a target="_blank" href="http://twitter.com/Paperny"><div class="icon sm twitter"></div></a>
+							<a target="_blank" href="//player.vimeo.com/video/118300083" class="fancybox fancybox.iframe"><div class="icon sm vimeo"></div></a>
 						</div>
 					</li>
 					</ul>
