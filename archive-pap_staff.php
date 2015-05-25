@@ -52,4 +52,9 @@ foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 			</div>
 		</div>
 	</div>
+	<style>
+	#header .image {
+		max-height: 600px;
+	}
+	</style>
 	<?php get_footer(); ?>

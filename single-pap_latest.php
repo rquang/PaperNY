@@ -12,7 +12,15 @@
 	<h1><?php the_title() ?></h1>
 	<div class="hr"></div>
 	<div class="date"><?php echo date('M . j . Y') ?></div>
-	<div class="share">SHARE</div>
+	<div class="share">
+		<div class="media">
+			<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}"); ?>"><div class="icon sm facebook gray"></div></a>
+			<a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode('http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}"); ?>"><div class="icon sm twitter gray"></div></a>
+			<a target="_blank" href="https://plus.google.com/share?url=<?php echo urlencode('http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}"); ?>"></a>
+		</div>
+		<div>SHARE</div>
+		<div class="clear"></div>
+	</div>
 	<div class="clear"></div>
 	<div class="text">
 		<?php the_content(); ?>

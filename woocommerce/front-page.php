@@ -52,7 +52,11 @@
 	<div id="shop">
 		<div class="top">
 			<div class="padder"></div>
-			<div class="content"><span>Shipping & Delivery</span><span>Return Policy</span><span class="search" data-link="/shop/">Search</span></div>
+			<div class="content">
+				<a href="<?php echo site_url() ?>/shipping-delivery/"><span>Shipping & Delivery</span></a>
+				<a href="<?php echo site_url() ?>/return-policy/"><span>Return Policy</span></a>
+				<span class="search" data-link="/shop/">Search</span>
+			</div>
 			<div class="triangle"></div>
 			<div class="clear"></div>
 		</div>

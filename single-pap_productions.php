@@ -44,14 +44,14 @@
 	<div class="right">
 	</div>
 	<?php 
-		$query = new WP_Query( array('post_type'=>'pap_latest', 'posts_per_page' => -1, 'meta_query' => array ('key' => 'productions', 'value' => $post->ID)) );
-		if($query->have_posts()){
+		$tquery = new WP_Query( array('post_type'=>'pap_latest', 'posts_per_page' => -1, 'meta_query' => array (array ('key' => 'productions', 'value' => $post->ID, 'compare' => 'LIKE'))) );
+		if($tquery->have_posts()){
 	?>
 	<div class="news">
 		<h2>News</h2>
 		<div class="hr"></div>
-		<?php while($query->have_posts()){
-		$query->the_post();
+		<?php while($tquery->have_posts()){
+		$tquery->the_post();
 		?>
 		<a href="<?php the_permalink() ?>">
 			<div class="news-item">
@@ -89,10 +89,6 @@ $(document).ready(function(){
 		$('#production .right .images img').on('click', function(){
 			var $t = $(this);
 			var img = $t.attr('src');
-			var link = $t.data('src');
-			if(link){
-				img = link;
-			}
 			$('#production .right .display img').attr('src', img);
 		});
 		$('#production .right .navigation div').on('click',function(){

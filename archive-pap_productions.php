@@ -113,8 +113,11 @@ $(document).ready(function(){
 					for(var i = 0; i<d.length; i++){
 						var p = d[i];
 						var e = $('#body .template .wrapper_link').clone().appendTo(wrapper);
+						if(i%4==3){
+							e.addClass('last');
+						}
 						e.attr('href', p.link);
-						e.find('.top .background img').attr('src', p.thumb);
+						e.find('.top .background').html(p.thumb);
 						e.find('.top .title h2').html(p.title);
 						e.find('.bottom .excerpt p').html(p.excerpt);
 						e.find('.bottom .data .year').html(p.year);
@@ -122,7 +125,9 @@ $(document).ready(function(){
 						e.find('.bottom .data .broadcaster').html(p.broadcaster);
 						e.show();
 					}
-					wrapper.append('<div class="clear lazyload"></div>');
+					if(d.length){
+						wrapper.append('<div class="clear lazyload"></div>');
+					}
 				}
 			});
 		}

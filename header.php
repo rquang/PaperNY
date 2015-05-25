@@ -22,8 +22,13 @@
 				action += $t.data('link');
 			}
 			$t.hide();
-			$t.parent().append('<form method="get" action="'+action+'" class="'+$t.prop('class')+'"><input type="text" name="s"></form>');
+			$t.parent().append('<form method="get" action="'+action+'" class="'+$t.prop('class')+'"><input type="text" name="s" placeholder="Search"></form>');
 		});
+	});
+	$(window).on('resize load', function(){
+		var h = $('#header .image img').outerHeight();
+		var max = parseInt($('#header .image').css('max-height'));
+		$('#header .image').css('height', (h > max ? max : h)+'px');
 	});
 	</script>
 </head>
@@ -62,9 +67,9 @@ foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 									<li><a href="<?php echo site_url()?>/about-us">Contact Us</a></li>
 								</ul>
 							</li>
-							<?php foreach($staff as $scat){ $catdata = $scat['data']; ?>
+							<?php $first = 1;foreach($staff as $scat){ $catdata = $scat['data']; ?>
 							<li>
-								<a href="<?php echo site_url() ?>/staff/<?php echo $catdata->slug ?>"><?php echo $catdata->name ?></a>
+								<?php if(!$first){ ?><a href="<?php echo site_url() ?>/staff/<?php echo $catdata->slug ?>"><?php echo $catdata->name ?></a><?php } ?>
 								<?php if(count($scat['children'])){ ?>
 								<ul class="inner">
 								<?php foreach($scat['children'] as $ccat){ ?>
@@ -73,7 +78,7 @@ foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 								</ul>
 								<?php } ?>
 							</li>
-							<?php } ?>
+							<?php $first = 0;} ?>
 						</ul>
 					</li>
 					<li class="media">

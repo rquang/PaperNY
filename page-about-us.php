@@ -12,13 +12,13 @@ foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 			<div class="content">
 				<h1>Paperny Entertainment</h1>
 				<div class="controls staff">
-				<?php foreach($staff as $t1){
+				<?php $first = 1;foreach($staff as $t1){
 					$catdata = $t1['data'];
-					echo '<a href="', site_url() ,'/staff/', $catdata->slug ,'"><div>', $catdata->name ,'</div></a>';
+					if(!$first){echo '<a href="', site_url() ,'/staff/', $catdata->slug ,'"><div>', $catdata->name ,'</div></a>';}
 					foreach($t1['children'] as $catdata){
 						echo '<a href="', site_url() ,'/staff/', $catdata->slug ,'"><div>', $catdata->name ,'</div></a>';
 					}
-				}
+				$first = 0;}
 				?>
 				</div>
 			</div>

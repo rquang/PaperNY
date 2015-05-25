@@ -80,6 +80,7 @@ foreach($theposts as $post){
 	$t['title'] = get_the_title();
 	$t['id'] = $post->ID;
 	$t['link'] = get_permalink();
+	$t['date'] = get_the_date('M . j . Y');
 	$t['thumb'] = get_the_post_thumbnail($post->ID, 'full');
 	$t['excerpt'] = get_the_excerpt();
 	$t['year'] = get_field('year');

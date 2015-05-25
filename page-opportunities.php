@@ -20,7 +20,7 @@ $qawards = new WP_Query(array('posts_per_page'=>-1,'post_type'=>'pap_award'));
 			<div id="awards">
 				<div class="left"><</div>
 				<div class="slider">
-					<?php while($qawards->have_posts()){
+					<?php $i = 0;while($qawards->have_posts()){
 						$qawards->the_post();
 					?>
 					<div class="award <?php echo $i; ?>">
@@ -28,7 +28,7 @@ $qawards = new WP_Query(array('posts_per_page'=>-1,'post_type'=>'pap_award'));
 						<div class="image"><?php the_post_thumbnail(); ?></div>
 						<div class="name"><?php the_title(); ?></div>
 					</div>
-				<?php } wp_reset_postdata(); ?>
+				<?php $i++;} wp_reset_postdata(); ?>
 					<div class="clear"></div>
 				</div>
 				<div class="right">></div>
