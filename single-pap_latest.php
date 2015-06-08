@@ -1,55 +1,64 @@
-<?php get_header(); the_post();?>	
+<?php get_header(); the_post();?>
+<?php if(get_field('header')){ ?>	
+	<div id="top-image">
 		<div class="image">
-			<?php if(get_field('header')){ ?><img src="<?php the_field('header'); ?>"><?php } ?>
-			<div class="news-title">
-				<div class="wrapper"><div class="text"><?php the_title() ?></div></div>
+			<img src="<?php the_field('header'); ?>">
+		</div>
+		<div class="caption">
+			<div class="container">
+				<div class="row">
+					<div class="content">
+						<h2><?php the_field('caption') ?></h2>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div id="main">
-		<div id="body">
-<div id="the-latest">
-	<h1><?php the_title() ?></h1>
-	<div class="hr"></div>
-	<div class="date"><?php echo date('M . j . Y') ?></div>
-	<div class="share">
-		<div class="media">
-			<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}"); ?>"><div class="icon sm facebook gray"></div></a>
-			<a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode('http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}"); ?>"><div class="icon sm twitter gray"></div></a>
-			<a target="_blank" href="https://plus.google.com/share?url=<?php echo urlencode('http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}"); ?>"></a>
+<?php } ?>
+<div id="main">
+	<div class="container">
+		<div class="row">
+			<div id="the-latest">
+				<div class="top">
+					<h1><?php the_title() ?></h1>					
+					<div class="row">
+						<div class="date">
+							<p><?php the_date('M . j . Y') ?></p>
+						</div>
+						<div class="share">
+							<ul>
+								<li>Share</li>
+								<li>							
+									<a target="_blank" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode('http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}"); ?>"></a>
+								</li>
+								<li>							
+									<a target="_blank" class="twitter" href="https://twitter.com/intent/tweet?url=<?php echo urlencode('http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}"); ?>"></a>
+								</li>
+								<li>							
+									<a target="_blank" class="google" href="https://plus.google.com/share?url=<?php echo urlencode('http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}"); ?>"></a>	
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<?php the_content(); ?>					
+				</div>
+			</div>
 		</div>
-		<div>SHARE</div>
-		<div class="clear"></div>
 	</div>
-	<div class="clear"></div>
-	<div class="text">
-		<?php the_content(); ?>
+	
+	<div class="gray-bg">
+		<div class="container">
+			<div class="row">
+				<div id="tags">
+
+					<span><?php echo strip_tags(get_the_tag_list('',', ','')); ?></span>
+
+				</div>
+			</div>
+		</div>
 	</div>
+	
 </div>
-<style>
-#header .icon.sm {
-	background-image: url("/wordpress/wp-content/themes/paperny/images/icons_news.png");
-}
-#header .top {
-	background: #000000;
-}
-
-#header .top .content .papernylogo, #header .top .content .nav-holder .nav > li > .inner {
-	background: rgba(0,0,0,0.4);
-}
-
-#header .top .content .nav-holder .nav > li > a {
-	border-bottom: 4px solid #000000;
-}
-
-#header .top .content .nav-holder .nav > li > a:hover {
-	border-bottom: 4px solid #545454;
-}
-</style>
-</div></div>
-	<div class="bottom">
-		<div class="tags">
-			<?php the_tags(''); ?>
-		</div>
-	</div>
 <?php get_footer(); ?>	

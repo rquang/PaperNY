@@ -1,0 +1,202 @@
+body {
+    @media (min-width: @screen-lg-min) {
+        header {
+            #logo {
+                img {
+                    padding: 10px 15px 0 15px;                    
+                }
+            }
+        }
+        footer {
+            .links {
+                ul {
+                    li {
+                        a {
+                            padding: 5px 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: @screen-md-min) {
+        &.single-pap_latest {
+            header {
+                #logo {
+                    img {
+                        background: rgba(0,0,0,0.6);
+                    }
+                }
+            }
+        }
+        header {
+            #logo {
+                margin-top: 0;
+                img {
+                    max-height: none;
+                    padding: 10px 15px 5px 15px;
+                    position: absolute;
+                    left: 0;
+                    .lh-background-image(linear-gradient(to bottom, @primary 0%,@secondary 100%));
+                }
+            }
+            #social-media {
+                margin: 13px 0;
+                ul {
+                    li {
+                        a {
+                            width: 35px;
+                            height: 35px;
+                            &:after {
+                                color: @primary;
+                                font-size: 1.2em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #top-image {
+            .image {
+                min-height: 300px;
+                max-height: 500px;
+                height: auto;
+            }
+        }
+        #slider {
+            .caption {
+                .left, .right {
+                    padding-top: 20px;
+                    &:before {
+                        font-size: 4em;
+                    }
+                }
+                .content {
+                    padding: 20px 0;
+                    h2 {
+                        font-size: 1.8em;
+                    }
+                    h3 {
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+        #ontheair {
+            .twitter {
+                .inner {
+                    min-height: 558px !important;
+                    .tweet {
+                        h3 {
+                            font-size: 1.15em;
+                        }
+                        p {
+                            font-size: 1em;
+                        }
+                    }
+                }
+            }
+        }
+        #production {
+            .slideshow {
+                float: right !important;
+            }
+        }
+        #clothing {
+            .main {
+                padding-right: 75px;
+                .product-clothing {
+                    max-height: 440px;
+                }
+            }
+            .side {
+                .product-clothing {
+                    max-height: 210px;
+                }
+            }
+        }
+    }
+    @media (min-width: @screen-sm-min) {
+        #top-image {
+            .top {
+                border-bottom: 1px solid @white;
+                margin-bottom: 10px;
+                padding-bottom: 10px !important;
+            }
+        }
+        #ontheair {
+            .twitter {
+                .inner {
+                    min-height: 698px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: @screen-sm-max) {
+        #ontheair {
+            .productions {
+                .item {
+                    display: none;
+                    &:first-child, &:nth-child(2) {
+                        display: block;
+                    }
+                }
+            }
+        }
+        #staff-options {
+            .controls {
+                ul {
+                    li {
+                        text-align: left;
+                        .make-xs-column(6);
+                        margin-bottom: 5px;
+                        a {
+                            display: block;
+                            background: @secondary;
+                            color: @white;
+                            padding: 2px 5px;
+                            font-size: 0.9em;
+                            &:after {
+                                font-family: FontAwesome;
+                                content: "\f105";
+                                float: right;
+                                color: @baby-blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #staff {
+            .item {
+                background: @light-gray;
+                .image {
+                    margin-top: 30px;
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+    @media (max-width: @screen-xs-max) {
+        font-size: 13px;
+        .title {
+            font-size: 1.8em;
+            font-weight: bold;
+            padding: 25px 0;
+        }
+        #about {
+            .location {
+                font-size: 0.75em;
+            }
+        }
+        #clothing {
+            .side {
+                .product-clothing {
+                    max-height: 150px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}

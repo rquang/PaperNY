@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license
+
+Copyright (c) 2013 Daniel Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+// Lesshat
+@import "lesshat.less";
+
+// attention_seekers
+@import "modules-prefixed/bounce.less";
+@import "modules-prefixed/flash.less";
+@import "modules-prefixed/pulse.less";
+@import "modules-prefixed/rubberBand.less";
+@import "modules-prefixed/shake.less";
+@import "modules-prefixed/swing.less";
+@import "modules-prefixed/tada.less";
+@import "modules-prefixed/wobble.less";
+
+// bouncing_entrances
+@import "modules-prefixed/bounceIn.less";
+@import "modules-prefixed/bounceInDown.less";
+@import "modules-prefixed/bounceInLeft.less";
+@import "modules-prefixed/bounceInRight.less";
+@import "modules-prefixed/bounceInUp.less";
+
+// bouncing_exits
+@import "modules-prefixed/bounceOut.less";
+@import "modules-prefixed/bounceOutDown.less";
+@import "modules-prefixed/bounceOutLeft.less";
+@import "modules-prefixed/bounceOutRight.less";
+@import "modules-prefixed/bounceOutUp.less";
+
+// fading_entrances
+@import "modules-prefixed/fadeIn.less";
+@import "modules-prefixed/fadeInDown.less";
+@import "modules-prefixed/fadeInDownBig.less";
+@import "modules-prefixed/fadeInLeft.less";
+@import "modules-prefixed/fadeInLeftBig.less";
+@import "modules-prefixed/fadeInRight.less";
+@import "modules-prefixed/fadeInRightBig.less";
+@import "modules-prefixed/fadeInUp.less";
+@import "modules-prefixed/fadeInUpBig.less";
+
+// fading_exits
+@import "modules-prefixed/fadeOut.less";
+@import "modules-prefixed/fadeOutDown.less";
+@import "modules-prefixed/fadeOutDownBig.less";
+@import "modules-prefixed/fadeOutLeft.less";
+@import "modules-prefixed/fadeOutLeftBig.less";
+@import "modules-prefixed/fadeOutRight.less";
+@import "modules-prefixed/fadeOutRightBig.less";
+@import "modules-prefixed/fadeOutUp.less";
+@import "modules-prefixed/fadeOutUpBig.less";
+
+// flippers
+@import "modules-prefixed/flip.less";
+@import "modules-prefixed/flipInX.less";
+@import "modules-prefixed/flipInY.less";
+@import "modules-prefixed/flipOutX.less";
+@import "modules-prefixed/flipOutY.less";
+
+// lightspeed
+@import "modules-prefixed/lightSpeedIn.less";
+@import "modules-prefixed/lightSpeedOut.less";
+
+// rotating_entrances
+@import "modules-prefixed/rotateIn.less";
+@import "modules-prefixed/rotateInDownLeft.less";
+@import "modules-prefixed/rotateInDownRight.less";
+@import "modules-prefixed/rotateInUpLeft.less";
+@import "modules-prefixed/rotateInUpRight.less";
+
+// rotating_exits
+@import "modules-prefixed/rotateOut.less";
+@import "modules-prefixed/rotateOutDownLeft.less";
+@import "modules-prefixed/rotateOutDownRight.less";
+@import "modules-prefixed/rotateOutUpLeft.less";
+@import "modules-prefixed/rotateOutUpRight.less";
+
+// sliders
+@import "modules-prefixed/slideInDown.less";
+@import "modules-prefixed/slideInLeft.less";
+@import "modules-prefixed/slideInRight.less";
+@import "modules-prefixed/slideInUp.less";
+@import "modules-prefixed/slideOutLeft";
+@import "modules-prefixed/slideOutDown.less";
+@import "modules-prefixed/slideOutRight.less";
+@import "modules-prefixed/slideOutUp.less";
+
+// specials
+@import "modules-prefixed/hinge.less";
+@import "modules-prefixed/rollIn.less";
+@import "modules-prefixed/rollOut.less";
+
+// zooming_entrances
+@import "modules-prefixed/zoomIn.less";
+@import "modules-prefixed/zoomInDown.less";
+@import "modules-prefixed/zoomInLeft.less";
+@import "modules-prefixed/zoomInRight.less";
+@import "modules-prefixed/zoomInUp.less";
+
+// zooming_exits
+@import "modules-prefixed/zoomOut.less";
+@import "modules-prefixed/zoomOutDown.less";
+@import "modules-prefixed/zoomOutLeft.less";
+@import "modules-prefixed/zoomOutRight.less";
+@import "modules-prefixed/zoomOutUp.less";
+
+.animated {
+	.lh-animation-duration(1s);
+	.lh-animation-fill-mode(both);
+}
+
+.animated.infinite {
+	.lh-animation-iteration-count(infinite);
+}
+
+.animated.hinge {
+	.lh-animation-duration(2s);
+}

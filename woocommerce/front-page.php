@@ -14,148 +14,164 @@
 			'link' => get_permalink(),
 		);
 	}
-	?>
-	<script>var shop_featured = <?php echo json_encode($shop_featured); ?>;
-	$(document).ready(function(){
-		var shop_active = 0;
-		$('.right, .left', '#header .shop-image').css({cursor: 'pointer'}).on('click', function(){
-			var $t = $(this);
-			var $e = $('#header .shop-image .preview');
-			if( ($t.hasClass('left') && shop_active > 0) || ($t.hasClass('right') && shop_active < shop_featured.length - 1) ){
-				shop_active += ($t.hasClass('left')?-1:1);
-				var s = shop_featured[shop_active];
-				$e.find('.thumb').html(s.thumb);
-				$e.find('.name').html(s.title);
-				$e.find('.description').html(s.desc);
-				$e.find('.price').html(s.price);
-				$e.find('.link a').attr('href', s.link);
-			}
-		});
-	});
-	</script>
-		<div class="shop-image">
-			<div class="left"><</div>
+?>
+<div id="shop-image">
+	<div class="container">
+		<div class="row">
+			<div class="left"></div>
 			<div class="preview">
-				<div class="thumb"><?php echo $shop_featured[0]['thumb']; ?></div>
-				<div class="data">
-					<div class="name"><?php echo $shop_featured[0]['title']; ?></div>
-					<div class="description"><?php echo $shop_featured[0]['desc']; ?></div>
-					<div class="price"><?php echo $shop_featured[0]['price']; ?></div>
-					<div class="link"><a href="<?php echo $shop_featured[0]['link']; ?>"><span>> Shop Now</span></a></div>
+				<div class="row">
+					<div class="thumb">
+						<?php echo $shop_featured[0]['thumb']; ?>
+					</div>
+					<div class="data">
+						<h3 class="name">
+							<?php echo $shop_featured[0]['title']; ?>
+						</h3>
+						<div class="desc">
+							<p><?php echo $shop_featured[0]['desc']; ?></p>
+						</div>
+						<p class="price">
+							<?php echo $shop_featured[0]['price']; ?>
+						</p>
+						<div class="shop-link">
+							<a href="<?php echo $shop_featured[0]['link']; ?>">Shop Now</a>							
+						</div>
+					</div>
 				</div>
-			<div class="clear"></div>
 			</div>
-			<div class="right">></div>
-			<div class="clear"></div>
+			<div class="right"></div>
 		</div>
 	</div>
-	<div id="shop">
-		<div class="top">
-			<div class="padder"></div>
-			<div class="content">
-				<a href="<?php echo site_url() ?>/shipping-delivery/"><span>Shipping & Delivery</span></a>
-				<a href="<?php echo site_url() ?>/return-policy/"><span>Return Policy</span></a>
-				<span class="search" data-link="/shop/">Search</span>
+</div>
+<div id="main">
+	<div class="container">
+		<div class="row">
+			<div id="searchbar" class="tab right">
+				<a href="<?php echo site_url() ?>/shipping-delivery/">Shipping &amp; Delivery</a>
+				<a href="<?php echo site_url() ?>/return-policy/">Return Policy</a>
+				<span>Search</span>
+				<form>
+				    <input type="text" placeholder="Search..." required>
+				    <button type="submit"><span class="fa fa-search"></span></button>
+				</form>
 			</div>
-			<div class="triangle"></div>
-			<div class="clear"></div>
-		</div>
-		<div id="body" class="shop">
-			<h1><span>Paperny Entertainment Store</span></h1>
-			<div class="categories">
+			<h1 class="title"><span>Paperny Entertainment Store</span></h1>
+			<div id="category">
 				<?php foreach(array('dvd', 'clothing', 'merchandise') as $pcat){
 					$cat = get_term_by('slug',$pcat,'product_cat');
 					$thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
 				?>
-				<a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>">
-					<div class="product_category">
+					<a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="product-item product-category">
 						<div class="thumb"><img src="<?php echo wp_get_attachment_url( $thumbnail_id ); ?>"></div>
-						<div class="name"><?php echo $cat->name; ?> ></div>
-					</div>
-				</a>
+						<span class="name"><?php echo $cat->name; ?></span>
+					</a>
 				<?php } ?>
 			</div>
 		</div>
-		<div id="dvd">
-			<div class="body">
-				<h1><span>DVDs</span></h1>
-				<div class="products">
+	</div>
+	<div id="dvd">
+		<div class="container">
+			<div class="row">
+				<h2 class="title"><span>DVDS</span></h2>
 				<?php
 					$dquery = new WP_Query(array('post_type'=>'product', 'product_cat' => 'dvd', 'product_tag'=>'featured', 'posts_per_page'=>4));
-					while($dquery->have_posts()){ $dquery->the_post();
+					while($dquery->have_posts()){ 
+						$dquery->the_post();
 						$xproduct = new WC_Product( get_the_ID() );
 						?>
-						<a href="<?php echo get_permalink(); ?>">
-						<div class="dvd">
+						<a href="<?php echo get_permalink(); ?>" class="product-item product-dvd">
 							<div class="thumb"><?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?></div>
-							<div class="name"><?php echo get_the_title(); ?></div>
-							<div class="price"><?php echo $xproduct->get_price_html(); ?></div>
-						</div>
+							<span class="name"><?php echo get_the_title(); ?></span>
+							<p class="price"><?php echo $xproduct->get_price_html(); ?></p>
 						</a>
 						<?php
 					}
 				?>
 				</div>
-				<?php $cat = get_term_by('slug','dvd','product_cat'); ?>
-				<div class="link"><a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>">DVDs >></a></div>
+				<a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="link">DVDs</a>			
 			</div>
 		</div>
-		<div id="cats">
-			<div class="body">
-				<h1><span>Clothing</span></h1>
-				<div class="clothing">
-				<?php
+	</div>
+	<div class="container">
+		<div class="row">
+			<h2 class="title"><span>Clothing</span></h2>
+			<div id="clothing">
+				<div class="main">
+				<?php 
 					$dquery = new WP_Query(array('post_type'=>'product', 'product_cat' => 'clothing', 'product_tag'=>'featured', 'posts_per_page'=>3));
 					while($dquery->have_posts()){ $dquery->the_post();
-						$xproduct = new WC_Product( get_the_ID() );
-						?>
-						<div class="first">
-							<div class="thumb"><?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
-								<div class="left">
+						$xproduct = new WC_Product( get_the_ID() ); ?>
+							<a href="<?php echo get_permalink(); ?>" class="product-item product-clothing">
+								<?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
+								<div class="info">
 									<div class="name"><?php echo get_the_title(); ?></div>
 									<div class="price"><?php echo $xproduct->get_price_html(); ?></div>
 								</div>
-								<div class="right">
-									<div class="link"><a href="<?php echo get_permalink(); ?>">Shop Now ></a></div>
-								</div>
-							</div>
-						</div>
-							<?php
-						break;
-					}
-					echo '<div class="side">';
-					while($dquery->have_posts()){ $dquery->the_post();
-						?>
-						<a href="<?php echo get_permalink() ?>">
-						<div class="item">
-							<?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
-						</div>
-						</a>
-					<?php } ?>
-					</div>
-					<div class="clear"></div>
+								<span class="link">Shop Now</span>
+							</a>
+					<?php break; } ?>					
 				</div>
-				<?php $cat = get_term_by('slug','clothing','product_cat'); ?>
-				<div class="link"><a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>">Clothing >></a></div>
-				<h1><span>Merchandise</span></h1>
-				<div class="merchandise">
+				<div class="side">
+					<div class="row">
+						<?php while($dquery->have_posts()){ 
+							$dquery->the_post();?>
+								<a href="<?php echo get_permalink() ?>" class="product-item product-clothing">
+									<?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
+								</a>
+						<?php } ?>
+					</div>
+					<a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="link">Clothing</a>							
+				</div>
+			</div>
+			<h2 class="title"><span>Merchandise</span></h2>
+			<div id="merchandise">
 				<?php
 					$dquery = new WP_Query(array('post_type'=>'product', 'product_cat' => 'merchandise', 'product_tag'=>'featured', 'posts_per_page'=>3));
 					while($dquery->have_posts()){ $dquery->the_post();
 						?>
-						<a href="<?php echo get_permalink(); ?>">
-						<div class="merch">
+						<a href="<?php echo get_permalink(); ?>" class="product-item product-merch">
 							<?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
-						</div>
 						</a>
 						<?php
 					}
 				?>
-					<div class="clear"></div>
-				</div>
-				<?php $cat = get_term_by('slug','merchandise','product_cat'); ?>
-				<div class="link"><a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>">Merchandise >></a></div>
+				<a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="link">Merchandise</a>			
 			</div>
 		</div>
 	</div>
-	<?php get_footer(); ?>
+</div>
+<script>
+var shop_featured = <?php echo json_encode($shop_featured); ?>;
+$(document).ready(function(){
+	var original = {order:'date',type:'news',posts:8};
+	var args = {order:'date',type:'news',posts:8};
+	$("#searchbar >span").on("click",function(){
+		$(this).fadeOut(function(){
+			$("#searchbar form").css("display","inline-block");
+		});
+	});
+	$( "#searchbar form" ).submit(function(e) {
+	  e.preventDefault();
+	  args = original;
+	  args.search = $("#searchbar input").val().trim();
+	  $("#latest-container .item").remove();
+	  $(window).trigger('lazyload');
+	});
+	var shop_active = 0;
+	$('#shop-image .right, #shop-image .left').on('click', function(){
+		var $t = $(this);
+		var $e = $('#shop-image .preview');
+		if( ($t.hasClass('left') && shop_active > 0) || ($t.hasClass('right') && shop_active < shop_featured.length - 1) ){
+			shop_active += ($t.hasClass('left')?-1:1);
+			var s = shop_featured[shop_active];
+			$e.find('.thumb').html(s.thumb);
+			$e.find('.name').html(s.title);
+			$e.find('.desc p').html(s.desc);
+			$e.find('.price').html(s.price);
+			$e.find('.shop-link a').attr('href', s.link);
+		}
+	});
+});
+</script>
+<?php get_footer(); ?>

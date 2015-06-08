@@ -59,7 +59,7 @@ foreach(array('genre', 'broadcaster') as $key){
 	}
 }
 if(count($filters)){
-	$args['mega_query'] = array();
+	$args['meta_query'] = array();
 	if(count($filters)>1){
 		$args['meta_query']['relation'] = 'AND';
 	}
@@ -70,6 +70,9 @@ if(count($filters)){
 			'compare' => 'LIKE'
 		);
 	}
+}
+if(isset($_GET['search'])){
+	$args['s'] = $_GET['search'];
 }
 
 $theposts = get_posts($args);

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width" />
 	<title>Paperny Entertainment</title>
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/fancybox/jquery.fancybox.css">
@@ -15,6 +16,24 @@
 		$('.fancybox').fancybox();
 	});
 	$('document').ready(function(){
+		if($(window).width() < 992) {
+			$('#mobile-nav').on("click", function(){
+				if ($(this).hasClass("active")) {
+					$('nav li').removeClass('active');
+					$('nav .inner').hide();
+				}
+				$(this).toggleClass("active");
+				$('nav').toggleClass("active");
+			});
+			$('nav li').on("click", function(e){
+				var $t = $(this);
+				if ($t.hasClass("parent") && !$t.hasClass("active")) {
+					$t.find(">.inner").slideToggle();
+					$t.addClass("active");
+					return false;
+				}
+			});
+		}
 		$('.search').click(function(){
 			var $t = $(this);
 			var action = '<?php echo site_url(); ?>';
@@ -32,43 +51,37 @@
 	});
 	</script>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <?php
 $staff = array();
 foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 	$staff[] = array('data' => $parent, 'children' => get_categories(array('type'=>'pap_staff','parent'=>$parent->cat_ID)));
 }
 ?>
-<div id="wrapper">
-	<div id="header">
-		<div class="top">
-			<div class="content">
-				<div class="papernylogo"><div class="main">Paperny</div><div class="second">Entertainment</div><div class="end">an <b>entertainment one</b> company</div></div>
-				<div class="mobile-menu">☰</div>
-				<div class="mobile-links">
-					<a target="_blank" href="http://www.facebook.com/PapernyEntertainment"><div class="icon sm facebook"></div></a>
-					<a target="_blank" href="http://twitter.com/Paperny"><div class="icon sm twitter"></div></a>
-					<a target="_blank" href="//player.vimeo.com/video/118300083" class="fancybox fancybox.iframe"><div class="icon sm vimeo"></div></a>
-				</div>
-				<div class="nav-holder">
-					<ul class="nav">
-					<li class="empty"></li>
+<header>
+	<div class="container">
+		<div class="row">
+			<div id="logo">
+				<a href="<?php echo site_url()?>"><img src="<?php bloginfo('template_directory'); ?>/images/paperny-logo-white-350.png" title="Go To Homepage" alt="PaperNY Logo"></a>
+			</div>
+			<nav>
+				<ul>
 					<li><a href="<?php echo site_url()?>">Home</a></li>
 					<li><a href="<?php echo site_url()?>/productions">Productions</a></li>
 					<li><a href="<?php echo site_url()?>/the-latest">The Latest</a></li>
 					<li><a href="<?php echo site_url()?>/opportunities">Opportunities</a></li>
-					<li><a href="<?php echo site_url()?>/shop">Store</a></li>
-					<li>
+					<!--<li><a href="<?php echo site_url()?>/shop">Store</a></li>-->
+					<li class="parent">
 						<a href="<?php echo site_url()?>/about-us">About Us</a>
 						<ul class="inner">
-							<li>
+							<li class="parent">
 								<a href="<?php echo site_url()?>/about-us">Paperny Entertainment</a>
 								<ul class="inner">
 									<li><a href="<?php echo site_url()?>/about-us">Contact Us</a></li>
 								</ul>
 							</li>
 							<?php $first = 1;foreach($staff as $scat){ $catdata = $scat['data']; ?>
-							<li>
+							<li class="parent">
 								<?php if(!$first){ ?><a href="<?php echo site_url() ?>/staff/<?php echo $catdata->slug ?>"><?php echo $catdata->name ?></a><?php } ?>
 								<?php if(count($scat['children'])){ ?>
 								<ul class="inner">
@@ -81,15 +94,22 @@ foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 							<?php $first = 0;} ?>
 						</ul>
 					</li>
-					<li class="media">
-						<div class="links">
-							<a target="_blank" href="http://www.facebook.com/PapernyEntertainment"><div class="icon sm facebook"></div></a>
-							<a target="_blank" href="http://twitter.com/Paperny"><div class="icon sm twitter"></div></a>
-							<a target="_blank" href="//player.vimeo.com/video/118300083" class="fancybox fancybox.iframe"><div class="icon sm vimeo"></div></a>
-						</div>
+				</ul>
+			</nav>
+			<div id="social-media">
+				<ul>
+					<li>
+						<a target="_blank" href="http://www.facebook.com/PapernyEntertainment" class="facebook"></a>
 					</li>
-					</ul>
-				</div>
-				<div class="clear"></div>
+					<li>
+						<a target="_blank" href="http://twitter.com/Paperny" class="twitter"></a>
+					</li>
+					<li>
+						<a target="_blank" href="//player.vimeo.com/video/118300083" class="fancybox fancybox.iframe vimeo"></a>
+					</li>	
+				</ul>			
 			</div>
-		</div>
+			<div id="mobile-nav"></div>				
+		</div>	
+	</div>
+</header>

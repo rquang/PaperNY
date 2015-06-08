@@ -1,0 +1,471 @@
+/*------------------------------------*\
+    Grid System
+\*------------------------------------*/
+
+.full-content {
+    .make-xs-column(12);
+}
+
+.half-content {
+    .make-xs-column(12);
+    .make-sm-column(12);
+    .make-md-column(6);
+}
+
+.third-content {
+    .make-xs-column(12);
+    .make-sm-column(4);
+    .make-md-column(4);
+    // &:last-child {
+    //     .make-sm-column(12);
+    //     .make-md-column(4);
+    // }   
+}
+/*------------------------------------*\
+    General
+\*------------------------------------*/
+/*------------------------------------*\
+    Header
+\*------------------------------------*/
+
+header {
+    #logo {
+        .make-xs-column(3.5);
+        .make-sm-column(2.5);
+        .make-md-column(2);
+    }
+    nav {
+        .hidden-xs;
+        .hidden-sm;
+        .make-md-column(7.75);
+    }
+    #social-media {
+        .make-xs-column(6.5);
+        .make-sm-column(7.5);
+        .make-md-column(2.25);
+    }
+    #mobile-nav {
+        .make-xs-column(2);
+        .hidden-md;
+        .hidden-lg;
+    }
+}
+/*------------------------------------*\
+    Front Page
+\*------------------------------------*/
+
+#slider {
+    .caption {
+        .left, .right {
+            .make-xs-column(1);
+        }
+        .content {
+            .make-xs-column(10);
+        }
+    }
+}
+
+#reel {
+    .half-content;
+}
+
+#news {
+    .half-content;
+    .item {
+        img {
+            .make-xs-column(5);
+        }
+        .content {
+            .make-xs-column(7);
+        }
+    }
+}
+
+#ontheair {
+    .full-content;
+    .productions {
+        .make-xs-column(12);
+        .make-sm-column(6);
+        .make-md-column(8);
+        .item {
+            .make-xs-column(12);
+            .make-md-column(4);
+            .bottom {
+                .make-row;
+                img {
+                    .make-xs-column(4);
+                }
+                .excerpt {
+                    .make-xs-column(8);
+                }
+            }
+        }
+    }
+    .twitter {
+        .make-xs-column(12);
+        .make-sm-column(6);
+        .make-md-column(4);
+    }
+}
+
+#store {
+    .full-content;
+}
+/*------------------------------------*\
+    Single & Archive Page
+\*------------------------------------*/
+
+#top-image {
+    .caption {
+        .content {
+            .make-xs-column(12);
+            .top {
+                .make-row;
+                .cat-title {
+                    .hidden-xs;
+                    .hidden-sm;
+                    .make-md-column(2);
+                }
+                .latest-title {
+                    .make-xs-column(12);
+                    .make-md-column(10);
+                }
+            }
+            .bottom {
+                .make-row;
+                .hidden-xs;
+                .date {
+                    .hidden-xs;
+                    .hidden-sm;
+                    .make-md-column(2);
+                }
+                .excerpt {
+                    .make-xs-column(12);
+                    .make-md-column(10);
+                }
+            }
+        }
+    }
+}
+
+#the-latest {
+    .full-content;
+    .top {
+        .date, .share {
+            .make-xs-column(6);
+        }
+    }
+    .content {
+        .make-xs-column(11);
+        .make-xs-column-offset(0.5);
+        .make-sm-column(10);
+        .make-sm-column-offset(1);
+    }
+}
+
+#tags {
+	.make-xs-column(12);
+}
+
+#production {
+    .top {
+        .make-xs-column(12);
+        .make-md-column(6);
+        table {
+            width: 100%;
+            tr {
+                .make-row;
+                td {
+                    display: inline-block;
+                    float: none !important;
+                    &.broadcaster {
+                        .make-xs-column(3);
+                    }
+                    &.episodes {
+                        .make-xs-column(4);
+                    }
+                    &.genre {
+                        .make-xs-column(5);
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        .make-xs-column(12);
+        .make-md-column(6);
+    }
+    .slideshow {
+        .make-xs-column(12);
+        .make-md-column(6);
+        .images {
+            .image {
+                .make-xs-column(4);
+            }
+        }
+    }
+    .social-media {
+        .make-xs-column(12);
+    }
+    .news {
+        .make-xs-column(12);
+        .item {
+            .make-row;
+            p {
+                .make-xs-column(4);
+                .make-md-column(2);
+            }
+            h3 {
+                .make-xs-column(8);
+                .make-md-column(10);
+            }
+        }
+    }
+}
+
+#sort-options {
+    .controls {
+        >span {
+            .make-xs-column(2.25);
+            .make-sm-column(1.5);
+            .make-md-column(1.2);
+            .make-lg-column(1);
+        }
+        select {
+            .make-xs-column(4.75);
+            .make-sm-column(3.5);
+            .hidden-md;
+            .hidden-lg;
+        }
+        >ul {
+            .hidden-xs;
+            .hidden-sm;
+            li {
+                .make-md-column(1.8);
+                .make-lg-column(1.5);
+            }
+        }
+        >div {
+            .make-xs-column(5);
+            .make-sm-column(3.5);
+            .make-md-column(3.6);
+            .make-lg-column(2.75);
+        }
+        >a {
+            .hidden-xs;
+            .make-sm-column(3.5);
+            .make-md-column(6);
+            .make-lg-column(2.25);
+        }
+    }
+}
+
+#filter {
+    .make-xs-column(12);
+    >div {
+        .make-row;
+        span {
+            .make-xs-column(3);
+        }
+    }
+}
+
+#productions-container {
+    .item {
+        .make-xs-column(12);
+        .make-sm-column(6);
+        .make-md-column(4);
+        .bottom {
+            .year {
+                .make-xs-column(4);
+            }
+            .episodes {
+                .make-xs-column(4);
+            }
+            .broadcaster {
+                .make-xs-column(4);
+            }
+        }
+    }
+}
+
+#staff {
+    .make-xs-column(12);
+    .item {
+        .make-row;
+        .image {
+            .make-xs-column(3);
+        }
+        .info {
+            .make-xs-column(9);
+        }
+    }
+}
+
+#latest-container {
+    h1 {
+        .hidden-md;
+        .hidden-lg;
+    }
+    .item {
+        .date {
+            .make-xs-column(12);
+            .make-sm-column(2.5);
+            .make-md-column(2);
+        }
+        .info {
+            .make-xs-column(12);
+            .make-sm-column(9.5);
+            .make-md-column(10);
+        }
+    }
+}
+/*------------------------------------*\
+    About Page
+\*------------------------------------*/
+
+#about {
+    .make-xs-column(12);
+    .contact {
+        .make-xs-column(12);
+        .make-md-column(4);
+        .location {
+            .make-xs-column(6);
+            .make-md-column(12);
+        }
+    }
+    .map {
+        .make-xs-column(12);
+        .make-md-column(8);
+    }
+}
+/*------------------------------------*\
+    Awards Page
+\*------------------------------------*/
+
+#awards {
+    .left, .right {
+        .make-xs-column(2);
+        .make-md-column(1);
+    }
+    .slider {
+        .make-xs-column(8);
+        .make-md-column(10);
+        .award {
+            .make-xs-column(12);
+            .make-sm-column(6);
+            .make-md-column(3);
+        }
+    }
+}
+/*------------------------------------*\
+    Opportunites Page
+\*------------------------------------*/
+
+#jobs {
+    .opening {
+        .make-xs-column(12);
+        .make-md-column(6);
+    }
+}
+
+/*------------------------------------*\
+    WooCommerce
+\*------------------------------------*/
+
+#shop-image {
+    .left, .right {
+        .make-xs-column(2);
+        .make-md-column(1);
+    }
+    .preview {
+        .make-xs-column(8);
+        .make-md-column(10);
+        .thumb {
+            .make-xs-column(12);
+            .make-md-column(3);
+        }
+        .data {
+            .make-xs-column(12);
+            .make-md-column(9);
+            .desc {
+                .hidden-xs;
+                .hidden-sm;
+            }
+        }
+    }
+}
+
+#category {
+    .product-category {
+        .make-xs-column(4);
+    }
+}
+
+#dvd {
+    .product-dvd {
+        .make-xs-column(6);
+        .make-md-column(3);
+    }
+}
+
+#clothing {
+    .main {
+        .make-xs-column(12);
+        .make-sm-column(9);
+    }
+    .side {
+        .make-xs-column(12);
+        .make-sm-column(3);
+        .product-clothing {
+        	.make-xs-column(6);
+        	.make-sm-column(12);
+        }
+    }
+}
+
+#merchandise {
+	.product-merch {
+		.make-xs-column(4);
+	}
+}
+
+#filters {
+    .make-xs-column(12);
+    .make-sm-column(3);
+    .tab, ul {
+        .hidden-xs;
+    }
+}
+
+#product-list {
+    .make-xs-column(12);
+    .make-sm-column(9);
+    .featured {
+        .make-row;
+        .product-item {
+            .make-xs-column(4);
+            .make-sm-column(4);
+        }
+    }
+}
+
+/*------------------------------------*\
+    Footer
+\*------------------------------------*/
+
+footer {
+    .hidden-xs;
+    .hidden-sm;
+    .logo {
+        .make-xs-column(5.5);
+        .make-md-column(3);
+    }
+    .links {
+        .make-xs-column(6.5);
+        .make-md-column(9);
+    }
+    .copy {
+        .make-xs-column(12);
+    }
+}

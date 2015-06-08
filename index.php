@@ -6,27 +6,29 @@ if(strpos($path, '/staff/') === 0){
 	die;
 }
 ?>
-	<?php get_header() ?>
+<?php get_header() ?>
+<?php if(get_field('header')){ ?>
+	<div id="top-image" class="overlay">
 		<div class="image">
-		index
+			<img src="<?php the_field('header'); ?>">
 		</div>
 	</div>
-	<div id="main">
-		<div class="top">
-			<div class="title">
-				<div class="padder"></div>
-				<div class="text"></div>
-				<div class="clear"></div>
+<?php } ?>
+<div id="main">
+	<div class="container">
+		<div class="row">
+			<div class="full-content mb">
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<h1 class="title"><span><?php the_title(); ?></span></h1>
+					<p><?php the_field('year') ?></p>
+					<p><?php the_content(__('(more...)')); ?></p>
+				<?php endwhile; else: ?>
+					<div class="empty">
+						<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+					</div>
+				<?php endif; ?>								
 			</div>
-			<div class="content"></div>
-		</div>
-		<div id="body">
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<h1><span><?php the_title(); ?></span></h1>
-			<p><?php the_field('year') ?></p>
-			<p><?php the_content(__('(more...)')); ?></p>
-			<?php endwhile; else: ?>
-			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
 		</div>
 	</div>
-	<?php get_footer(); ?>
+</div>
+<?php get_footer(); ?>
