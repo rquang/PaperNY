@@ -1,4 +1,10 @@
 <?php
+
+add_action('woocommerce_single_product_summary','addshare', 40);
+function addshare(){
+echo sharing_display();
+}
+
 function custom_excerpt_more( $more ) {
 	return ' ...';
 }

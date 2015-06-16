@@ -14,8 +14,6 @@
 			$('#header .top .content .nav-holder').toggle();
 		});
 		$('.fancybox').fancybox();
-	});
-	$('document').ready(function(){
 		if($(window).width() < 992) {
 			$('#mobile-nav').on("click", function(){
 				if ($(this).hasClass("active")) {
@@ -70,7 +68,7 @@ foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 					<li><a href="<?php echo site_url()?>/productions">Productions</a></li>
 					<li><a href="<?php echo site_url()?>/the-latest">The Latest</a></li>
 					<li><a href="<?php echo site_url()?>/opportunities">Opportunities</a></li>
-					<!--<li><a href="<?php echo site_url()?>/shop">Store</a></li>-->
+					<li><a href="<?php echo site_url()?>/shop">Store</a></li>
 					<li class="parent">
 						<a href="<?php echo site_url()?>/about-us">About Us</a>
 						<ul class="inner">

@@ -63,8 +63,12 @@
 					$thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
 				?>
 					<a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="product-item product-category">
-						<div class="thumb"><img src="<?php echo wp_get_attachment_url( $thumbnail_id ); ?>"></div>
-						<span class="name"><?php echo $cat->name; ?></span>
+						<div class="thumb">
+							<div class="inner">
+								<img src="<?php echo wp_get_attachment_url( $thumbnail_id ); ?>">	
+							</div>
+						</div>
+						<p class="name"><?php echo $cat->name; ?></p>
 					</a>
 				<?php } ?>
 			</div>
@@ -81,8 +85,10 @@
 						$xproduct = new WC_Product( get_the_ID() );
 						?>
 						<a href="<?php echo get_permalink(); ?>" class="product-item product-dvd">
-							<div class="thumb"><?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?></div>
-							<span class="name"><?php echo get_the_title(); ?></span>
+							<div class="thumb">
+								<div class="inner"><?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?></div>
+							</div>
+							<p class="name"><?php echo get_the_title(); ?></p>
 							<p class="price"><?php echo $xproduct->get_price_html(); ?></p>
 						</a>
 						<?php
@@ -105,8 +111,8 @@
 							<a href="<?php echo get_permalink(); ?>" class="product-item product-clothing">
 								<?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
 								<div class="info">
-									<div class="name"><?php echo get_the_title(); ?></div>
-									<div class="price"><?php echo $xproduct->get_price_html(); ?></div>
+									<p class="name"><?php echo get_the_title(); ?></p>
+									<p class="price"><?php echo $xproduct->get_price_html(); ?></p>
 								</div>
 								<span class="link">Shop Now</span>
 							</a>
@@ -165,7 +171,7 @@ $(document).ready(function(){
 		if( ($t.hasClass('left') && shop_active > 0) || ($t.hasClass('right') && shop_active < shop_featured.length - 1) ){
 			shop_active += ($t.hasClass('left')?-1:1);
 			var s = shop_featured[shop_active];
-			$e.find('.thumb').html(s.thumb);
+			$e.find('.thumb .inner').html(s.thumb);
 			$e.find('.name').html(s.title);
 			$e.find('.desc p').html(s.desc);
 			$e.find('.price').html(s.price);

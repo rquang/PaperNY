@@ -10,7 +10,7 @@
 						<li><a href="<?php echo site_url()?>/productions">Productions</a></li>
 						<li><a href="<?php echo site_url()?>/the-latest">The Latest</a></li>
 						<li><a href="<?php echo site_url()?>/opportunities">Opportunities</a></li>
-						<!--<li><a href="<?php echo site_url()?>/shop">Store</a></li>-->
+						<li><a href="<?php echo site_url()?>/shop">Store</a></li>
 						<li><a href="<?php echo site_url()?>/about-us">About Us</a></li>
 					</ul>
 				</div>

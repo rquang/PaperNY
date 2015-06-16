@@ -93,10 +93,10 @@ header {
             .bottom {
                 .make-row;
                 img {
-                    .make-xs-column(4);
+                    .make-xs-column(3.5);
                 }
                 .excerpt {
-                    .make-xs-column(8);
+                    .make-xs-column(8.5);
                 }
             }
         }
@@ -430,22 +430,108 @@ header {
 	}
 }
 
-#filters {
+#product-filters {
+    clear: both;
     .make-xs-column(12);
-    .make-sm-column(3);
-    .tab, ul {
+    .make-md-column(3);
+    select {
+        .hidden-md;
+        .hidden-lg;
+    }
+    .filter-category {
         .hidden-xs;
+        .hidden-sm;
     }
 }
 
 #product-list {
     .make-xs-column(12);
-    .make-sm-column(9);
+    .make-md-column(9);
     .featured {
         .make-row;
         .product-item {
             .make-xs-column(4);
+        }        
+    }
+    .products {
+        .make-row;
+        .product-item {
+            .make-xs-column(6);
             .make-sm-column(4);
+        }
+    }
+}
+
+#single-product {
+    .woocommerce-error, .woocommerce-message {
+        .make-xs-column(12);
+    }
+    .images {
+        .make-xs-column(12);
+        .make-sm-column(7);
+        >a {
+            float: left;
+            width: 75%;
+        }
+        .thumbnails {
+            float: left;
+            width: 25%;
+        }
+    }
+    .summary {
+        .make-xs-column(12);
+        .make-sm-column(5);
+        .cart {
+            .variations {
+                .make-xs-column(12);
+                .make-md-column(7);
+            }
+             .single_variation_wrap {
+                .make-xs-column(12);
+                .make-md-column(5);                
+             }
+        }
+    }
+    .related {
+        .make-xs-column(12);
+        .make-sm-column(7);
+        .products {
+            .make-row;
+            li {
+                .make-xs-column(4);
+            }
+        }
+    }
+}
+
+.woocommerce-checkout {
+    .form-row {
+        .make-xs-column(12);
+        .make-sm-column(6);
+        .make-md-column(4);
+    }
+    #order_review { 
+        .shop_table {
+            .make-xs-column(12);
+            .make-md-column(4);
+        }
+        #payment {
+            .make-xs-column(12);
+            .make-md-column(8);
+            .payment_methods {
+                .make-row;
+                li {
+                    .make-xs-column(12);
+                }
+            }
+        }
+        .place-order {
+            .make-xs-column(12);
+            .make-sm-column(6);
+            .make-sm-column-offset(6);
+            .make-md-column(4);
+            .make-md-column-offset(8);
+            float: right;
         }
     }
 }

@@ -1,20 +1,14 @@
-	<?php get_header() ?>
-	</div>
-	<div id="main">
-		<div class="top">
-			<div class="title">
-				<div class="padder"></div>
-				<div class="text"></div>
-				<div class="clear"></div>
-			</div>
-			<div class="content"></div>
-		</div>
-		<div id="body" class="cart">
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<h1><span><?php the_title(); ?></span></h1>
-			<p><?php the_content(__('(more...)')); ?></p>
-			<?php endwhile; else: ?>
-			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p><?php endif; ?>
+<?php get_header() ?>
+<div id="main">
+	<div class="container">
+		<div class="row">
+			<h1 class="title"><span>Cart</span></h1>
+			<div id="cart">
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<?php the_content(); ?>
+				<?php endwhile; endif; ?>
+			</div>			
 		</div>
 	</div>
-	<?php get_footer(); ?>
+</div>
+<?php get_footer(); ?>

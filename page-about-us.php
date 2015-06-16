@@ -4,20 +4,20 @@ foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 	$staff[] = array('data' => $parent, 'children' => get_categories(array('type'=>'pap_staff','parent'=>$parent->cat_ID)));
 }
 ?>
-	<div id="top-image" class="overlay">
-		<div class="image">
-			<img src="http://neko.dragonbyte.me/wordpress/wp-content/uploads/2015/06/office-3000.jpg"></img>
-		</div>
-		<div class="caption">
-			<div class="container">
-				<div class="row">
-					<div class="content">
-						<h2>PaperNY Entertainment</h2>
-					</div>
+<div id="top-image" class="overlay">
+	<div class="image">
+		<img src="http://neko.dragonbyte.me/wordpress/wp-content/uploads/2015/06/office-3000.jpg"></img>
+	</div>
+	<div class="caption">
+		<div class="container">
+			<div class="row">
+				<div class="content">
+					<h2>PaperNY Entertainment</h2>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 <div id="staff-options">
 	<div class="container">
 		<div class="row">

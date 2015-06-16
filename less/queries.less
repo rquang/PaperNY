@@ -18,6 +18,16 @@ body {
                 }
             }
         }
+        #single-product {
+            .images {
+                max-height: 460px !important;
+                .thumbnails {
+                    a {
+                        max-height: 150px !important;
+                    }
+                }
+            }
+        }
     }
     @media (min-width: @screen-md-min) {
         &.single-pap_latest {
@@ -115,6 +125,32 @@ body {
                 }
             }
         }
+        .product-item {
+            .thumb {
+                .inner {
+                    height: 220px !important;
+                }
+            }
+        }
+        #single-product {
+            .images {
+                max-height: 400px;
+                .thumbnails {
+                    a {
+                        max-height: 130px;
+                    }
+                }
+            }
+            .related {
+                .products {
+                    li {
+                        a {
+                            height: 175px;
+                        }
+                    }
+                }
+            }
+        }
     }
     @media (min-width: @screen-sm-min) {
         #top-image {
@@ -125,9 +161,21 @@ body {
             }
         }
         #ontheair {
+            .productions {
+                .excerpt p {
+                    font-size: 0.8em !important;
+                }
+            }
             .twitter {
                 .inner {
                     min-height: 698px;
+                }
+            }
+        }
+        .product-item {
+            .thumb {
+                .inner {
+                    height: 200px;
                 }
             }
         }
@@ -177,6 +225,29 @@ body {
                 }
             }
         }
+        &.tax-product_cat {
+            #product-filters {
+                .tab {
+                    display: none;
+                    &:before, &:after {
+                        display: none;
+                    }
+                }
+                #shopping-cart {
+                    width: auto !important;
+                    display: block !important;
+                    float: right !important;
+                    background: none !important;
+                    margin: 0;
+                    min-height: auto;
+                    a {
+                        margin: 0;
+                        padding: 0 10px;
+                        border: 1px solid @light-gray;
+                    }
+                }
+            }
+        }
     }
     @media (max-width: @screen-xs-max) {
         font-size: 13px;
@@ -197,6 +268,20 @@ body {
                     overflow: hidden;
                 }
             }
+        }
+        &.tax-product_cat {
+            #searchbar {
+                width: 100%;
+                min-height: 50px;
+                background: @cyan !important;
+                &:before, &:after {
+                    display: none;
+                }
+            }
+        }
+        .cart_totals, .shipping-calculator-form {
+            width: 100%;
+            margin-bottom: 15px;
         }
     }
 }
