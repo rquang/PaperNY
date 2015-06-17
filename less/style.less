@@ -194,12 +194,17 @@ header {
 }
 
 #ontheair {
+    margin-bottom: 30px;
     .productions {
         .item {
             .top {
                 position: relative;
+                max-height: 120px;
+                overflow: hidden;
                 img {
-                    .img-responsive;
+                    width: 100%;
+                    height: auto;
+                    min-height: 120px;
                 }
                 span {
                     position: absolute;
@@ -354,17 +359,17 @@ header {
         }
     }
     &.overlay {
-        .image {
-            &:before {
-                position: absolute;
-                content: "";
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: rgba(5, 64, 117, 0.5);
-            }
-        }
+        // .image {
+        //     &:before {
+        //         position: absolute;
+        //         content: "";
+        //         top: 0;
+        //         bottom: 0;
+        //         left: 0;
+        //         right: 0;
+        //         background: rgba(5, 64, 117, 0.5);
+        //     }
+        // }
         .caption {
             background: none;
             .content {
