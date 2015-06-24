@@ -1,0 +1,62 @@
+
+#jobs {
+    .opening {
+        margin-bottom: 30px;
+        >h3 {
+            padding: 10px 0;
+            background: @primary;
+            color: @white;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .content {
+            background: @white;
+            padding: 15px 30px 45px 30px;
+            font-family: @ptsans;
+            .date {
+                p {
+                    color: @primary;
+                    font-weight: bold;
+                    span {
+                        font-weight: normal;
+                        margin-left: 10px;
+                        text-transform: uppercase;
+                        &.closing-date {
+                            color: red;
+                        }
+                    }
+                }
+            }
+            .excerpt {
+                color: @primary;
+                span {
+                    color: @secondary;
+                    display: block;
+                    border-bottom: 1px solid @secondary;
+                    margin-bottom: 10px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+            }
+        }
+        >a {
+            display: block;
+            text-align: center;
+            background: @secondary;
+            color: @white;
+            padding: 5px 0;
+            text-decoration: none;
+            p {
+                margin: 0;
+                font-weight: bold;
+            }
+            &:hover {
+                background: @gray;
+            }
+        }
+        &:nth-child(2n + 1) {
+            clear: both;
+        }
+    }
+}

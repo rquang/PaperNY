@@ -1,0 +1,314 @@
+#top-image {
+    position: relative;
+    overflow: hidden;
+    .image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            z-index: -1;
+            position: relative;
+            top: 25%;
+            transform: translateY(-25%);
+        }
+    }
+    .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.75);
+        .content {
+            padding: 15px 0;
+            text-align: center;
+            h2 {
+                color: @white;
+                margin: 0;
+                font-size: 1em;
+            }
+            .top {
+                text-align: left;
+                padding: 0 15px;
+                .cat-title {
+                    h1 {
+                        margin: 0;
+                        color: @white;
+                        text-transform: uppercase;
+                        &:before {
+                            font-family: FontAwesome;
+                            content: "\f101";
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                .latest-title {
+                    h2 {
+                        font-size: 1.6em;
+                    }
+                }
+            }
+            .bottom {
+                text-align: left;
+                padding: 0 15px;
+                .date {
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: @baby-blue;
+                }
+                .excerpt {
+                    font-family: @ptsans;
+                    color: @white;
+                    line-height: 1.25;
+                    .link {
+                        color: @baby-blue;
+                        &:before {
+                            color: @white;
+                        }
+                        &:hover {
+                            color: @gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.overlay {
+        // .image {
+        //     &:before {
+        //         position: absolute;
+        //         content: "";
+        //         top: 0;
+        //         bottom: 0;
+        //         left: 0;
+        //         right: 0;
+        //         background: rgba(5, 64, 117, 0.5);
+        //     }
+        // }
+        .caption {
+            background: none;
+            .content {
+                width: auto !important;
+                position: relative;
+                text-align: left;
+                background: rgba(8, 42, 97, 0.75);
+                background: rgba(0, 0, 0, 0.75);
+                h2 {
+                    padding-left: 15px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: 1.8em;
+                }
+                &:before {
+                    top: 0;
+                    left: -1000px;
+                    position: absolute;
+                    content: "";
+                    //background: rgba(8, 42, 97,0.75);
+                    background: rgba(0, 0, 0, 0.75);
+                    height: 61px;
+                    width: 1000px;
+                }
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    right: -61px;
+                    display: block;
+                    content: "";
+                    border-right: 61px solid transparent;
+                    //border-bottom: 61px solid rgba(8, 42, 97,0.75);
+                    border-bottom: 61px solid rgba(0, 0, 0, 0.75);
+                }
+            }
+        }
+    }
+}
+
+#the-latest {
+    .top {
+        margin: 30px 0 45px 0;
+        h1 {
+            margin: 0 0 10px 0;
+            padding-bottom: 10px;
+            color: @primary;
+            border-bottom: 2px solid @secondary;
+        }
+        .date {
+            p {
+                color: @baby-blue;
+                text-transform: uppercase;
+                margin: 0;
+            }
+        }
+        .share {
+            ul {
+                text-align: right;
+                .social-media;
+                li {
+                    text-transform: uppercase;
+                    vertical-align: top;
+                    margin-left: 10px;
+                    color: @gray;
+                    &:first-child {
+                        margin-left: 0;
+                        margin-right: 10px;
+                    }
+                    a {
+                        background: @gray;
+                        &:hover {
+                            background: @primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .content {
+        img {
+            .img-responsive;
+            margin: 0 auto 15px auto;
+        }
+    }
+}
+
+#tags {
+    margin: 30px 0;
+    a {
+        text-decoration: none;
+        color: @primary;
+        &:hover {
+            color: @secondary;
+        }
+    }
+}
+
+#production {
+    .top {
+        .hr {
+            margin: 15px 0;
+        }
+        table {
+            tr {
+                td {
+                    vertical-align: middle;
+                    img {
+                        .img-responsive;
+                    }
+                    &.episodes {
+                        text-align: center;
+                    }
+                    &.genre {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+    .slideshow {
+        margin-bottom: 30px;
+        .display {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .nav {
+            >div {
+                width: 50%;
+                float: left;
+                color: @black;
+                cursor: pointer;
+                &:before {
+                    font-family: FontAwesome;
+                    font-size: 1.5em;
+                }
+                &:hover {
+                    color: @primary;
+                }
+            }
+            .left {
+                &:before {
+                    content: "\f104"
+                }
+            }
+            .right {
+                text-align: right;
+                &:before {
+                    content: "\f105"
+                }
+            }
+        }
+        .images {
+            .row {
+                margin: 0 -3px;
+                .image {
+                    max-height: 125px;
+                    overflow: hidden;
+                    padding: 0 3px 3px;
+                    margin-bottom: 6px;
+                    cursor: pointer;
+                    &:hover {
+                        .lh-opacity(0.5);
+                    }
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+    .social-media {
+        ul {
+            .social-media;
+            li {
+                &:first-child {
+                    margin-left: 0;
+                    margin-right: 10px;
+                }
+                a {
+                    width: 50px;
+                    height: 50px;
+                    background: @secondary;
+                    color: @primary;
+                    &:hover {
+                        background: @primary;
+                    }
+                }
+            }
+        }
+    }
+    .news {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        h2 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            color: @primary;
+            font-weight: bold;
+            border-bottom: 1px solid @gray;
+        }
+        .item {
+            display: block;
+            margin-bottom: 30px;
+            line-height: 1;
+            p {
+                text-transform: uppercase;
+                color: @baby-blue;
+                margin: 0;
+            }
+            h3 {
+                color: @black;
+                text-transform: capitalize;
+                margin: 0;
+                font-size: 1em;
+            }
+            &:hover {
+                h3 {
+                    color: @gray;
+                }
+            }
+        }
+    }
+}

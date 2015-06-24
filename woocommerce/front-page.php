@@ -47,14 +47,22 @@
 <div id="main">
 	<div class="container">
 		<div class="row">
-			<div id="searchbar" class="tab right">
+			<div class="tab right">
 				<a href="<?php echo site_url() ?>/shipping-delivery/">Shipping &amp; Delivery</a>
 				<a href="<?php echo site_url() ?>/return-policy/">Return Policy</a>
-				<span>Search</span>
-				<form>
-				    <input type="text" placeholder="Search..." required>
-				    <button type="submit"><span class="fa fa-search"></span></button>
-				</form>
+				<div id="searchbar">
+					<span>Search</span>
+					<form>
+					    <input type="text" placeholder="Search..." required>
+					    <button type="submit"><i class="fa fa-search"></i></button>
+					</form>					
+				</div>
+				<div id="shopping-cart">
+					<a href="<?php echo site_url()?>/cart">
+						<?php echo WC()->cart->get_cart_total(); ?>
+						<span class="items"><?php echo sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?> |</span>
+					</a>
+				</div>
 			</div>
 			<h1 class="title"><span>Paperny Entertainment Store</span></h1>
 			<div id="category">
@@ -149,7 +157,7 @@
 </div>
 <script>
 var shop_featured = <?php echo json_encode($shop_featured); ?>;
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	var original = {order:'date',type:'news',posts:8};
 	var args = {order:'date',type:'news',posts:8};
 	$("#searchbar >span").on("click",function(){
@@ -171,7 +179,7 @@ $(document).ready(function(){
 		if( ($t.hasClass('left') && shop_active > 0) || ($t.hasClass('right') && shop_active < shop_featured.length - 1) ){
 			shop_active += ($t.hasClass('left')?-1:1);
 			var s = shop_featured[shop_active];
-			$e.find('.thumb .inner').html(s.thumb);
+			$e.find('.thumb').html(s.thumb);
 			$e.find('.name').html(s.title);
 			$e.find('.desc p').html(s.desc);
 			$e.find('.price').html(s.price);

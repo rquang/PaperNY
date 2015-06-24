@@ -1,0 +1,70 @@
+.woocommerce-message {
+    margin: 10px 0;
+    color: green;
+    &:before {
+        font-family: FontAwesome;
+        content: "\f058";
+        margin-right: 7px;
+    }
+    a {
+        font-size: 0;
+    }
+}
+
+.woocommerce-info {
+    display: none;
+    margin: 10px 0;
+    color: @gray;
+    &:before {
+        font-family: FontAwesome;
+        content: "\f111";
+        margin-right: 7px;
+    }
+}
+
+.woocommerce-error {
+    list-style-type: none;
+    li {
+        color: red;
+        &:before {
+            font-family: FontAwesome;
+            content: "\f06a";
+            margin-right: 7px;
+        }
+    }
+}
+
+#shopping-cart {
+    display: inline-block;
+    text-align: right;
+    margin-left: 25px;
+    a {
+        font-size: 1.05em;
+        font-family: @ptsans;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: @primary;
+        text-decoration: none;
+        span {
+            color: @primary;
+        }
+        &:after {
+            margin-left: 5px;
+            font-family: FontAwesome;
+            content: "\f07a";
+        }
+        &:hover {
+            color: @white;
+            span {
+                color: @white;
+            }
+        }
+    }
+}
+
+@import "front";
+@import "archive";
+@import "single";
+@import "cart";
+@import "checkout";
+@import "thankyou";

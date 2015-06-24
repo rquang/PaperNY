@@ -1,0 +1,175 @@
+#slider {
+    position: relative;
+    max-height: 600px;
+    overflow: hidden;
+    img {
+        .img-responsive;
+    }
+    .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.75);
+        .content {
+            padding: 10px 0;
+            text-align: center;
+            h2 {
+                color: @white;
+                margin: 0 0 5px 0;
+                font-size: 1em;
+            }
+            h3 {
+                color: @secondary;
+                margin: 0;
+                text-transform: uppercase;
+                font-size: 0.9em;
+            }
+        }
+        .left,
+        .right {
+            text-align: center;
+            cursor: pointer;
+            padding-top: 10px;
+            &:before {
+                line-height: 1;
+                font-family: FontAwesome;
+                color: @white;
+                font-size: 2em;
+            }
+            &:hover {
+                &:before {
+                    color: @secondary;
+                }
+            }
+        }
+        .left {
+            &:before {
+                content: "\f104"
+            }
+        }
+        .right {
+            &:before {
+                content: "\f105"
+            }
+        }
+    }
+}
+
+#news {
+    .item {
+        display: inline-block;
+        img {
+            .img-responsive;
+        }
+        .content {
+            h4 {
+                margin: 0 0 10px 0;
+                padding-bottom: 5px;
+                border-bottom: 1px solid @gray;
+            }
+            h3 {
+                margin: 0;
+                text-transform: capitalize;
+                color: @black;
+            }
+        }
+        &:hover {
+            .content {
+                h4 {
+                    color: @primary;
+                }
+                h3 {
+                    color: @secondary;
+                }
+            }
+        }
+    }
+}
+
+#ontheair {
+    margin-bottom: 30px;
+    .productions {
+        .item {
+            .top {
+                position: relative;
+                max-height: 120px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: auto;
+                    min-height: 120px;
+                }
+                span {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: rgba(0, 0, 0, 0.75);
+                    text-align: center;
+                    padding: 10px 0;
+                    h3 {
+                        color: @white;
+                        margin: 0;
+                        font-size: 1.2em;
+                    }
+                }
+            }
+            .bottom {
+                padding: 0 15px;
+                .inner {
+                    padding: 15px 0;
+                    display: inline-block;
+                    border-left: 1px solid @light-gray;
+                    border-right: 1px solid @light-gray;
+                    img {
+                        .img-responsive;
+                    }
+                    .excerpt {
+                        padding-left: 0;
+                        p {
+                            font-family: @ptsans;
+                            line-height: 1;
+                            color: @gray;
+                            font-size: 1em;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .top {
+                    span {
+                        background: rgba(49, 101, 161, 0.75);
+                    }
+                }
+            }
+        }
+    }
+    .twitter {
+        iframe {
+            width: 100% !important;
+        }
+        .inner {
+            min-height: 532px;
+            border: 1px solid @light-gray;
+            padding: 15px;
+            .tweet {
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                h3 {
+                    margin: 0 0 5px 0;
+                    color: @baby-blue;
+                    font-size: 1em;
+                }
+                p {
+                    color: @gray;
+                    margin: 0;
+                    font-size: 0.9em;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+}

@@ -23,7 +23,7 @@
 	</div>
 </div>
 <script>
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	var container = $('.thumbnails');
 	if(container.find('a').length > 3) {
 		container.append("<span class='up'></span><span class='down'></span>");
@@ -44,5 +44,4 @@ $(document).ready(function(){
 	});
 });
 </script>
-<script type="text/javascript" src="<?php echo plugins_url(); ?>/woocommerce/assets/js/frontend/add-to-cart-variation.min.js"></script>
 <?php get_footer(); ?>

@@ -21,7 +21,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 // filter hook for include new pages inside the payment method
 $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->get_checkout_url() ); ?>
-
+<h1 class="title"><span>Checkout</span></h1>
 <form name="checkout" method="post" class="checkout" action="<?php echo esc_url( $get_checkout_url ); ?>" enctype="multipart/form-data">
 
 	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
@@ -55,20 +55,3 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
-
-<script>
-$(document).ready(function(){
-	if($('#ship-to-different-address-checkbox').is(":checked")){
-		$(".shipping_address,.shipping-info .notes").fadeIn();
-	} else {
-		$(".shipping_address,.shipping-info .notes").fadeOut();
-	}
-	$("#ship-to-different-address-checkbox").on("change",function(){
-		if($(this).is(":checked")){
-			$(".shipping_address,.shipping-info .notes").fadeIn();
-		} else {
-			$(".shipping_address,.shipping-info .notes").fadeOut();
-		}
-	});
-});
-</script>

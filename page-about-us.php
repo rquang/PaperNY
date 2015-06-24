@@ -69,7 +69,7 @@ foreach(get_categories(array('type'=>'pap_staff','parent'=>25)) as $parent){
 	</div>
 </div>
 <script>
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	$(".location script").remove();
 	$('.location').on('click',function(){
 		var $t = $(this);

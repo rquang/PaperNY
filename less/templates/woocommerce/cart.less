@@ -1,0 +1,191 @@
+#cart {
+    .woocommerce {
+        .cart-empty {
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .return-to-shop {
+            text-align: center;
+            a {
+                display: inline-block;
+                padding: 5px 10px;
+                background: @primary;
+                text-transform: uppercase;
+                border: 0;
+                color: @white;
+                &:hover {
+                    background: @light-gray;
+                }                
+            }
+        }
+        width: 100%;
+        a {
+            text-decoration: none;
+        }
+        form {
+            margin-bottom: 30px;
+            width: inherit;
+            table {
+                width: inherit;
+                thead {
+                    text-transform: uppercase;
+                    background: @light-gray;
+                    th {
+                        text-align: center;
+                    }
+                }
+                tbody {
+                    .cart_item {
+                        text-align: center;
+                        border-bottom: 1px solid @light-gray;
+                        td {
+                            padding: 15px 0;
+                        }
+                    }
+                    .cart_options {
+                        text-align: right;
+                        a, input[type="submit"] {
+                            display: inline-block;
+                            padding: 5px 10px;
+                            background: @primary;
+                            border: 0;
+                            color: @white;
+                            &:hover {
+                                background: @light-gray;
+                            }
+                        }
+                        td {
+                            padding: 15px 0;
+                        }
+                    }
+                    .cart-collaterals {
+                        .cart_totals {
+                            padding: 5px 30px;
+                            float: right;
+                            display: inline-block;
+                            background: @cyan;
+                            table {
+                                td, th {
+                                    padding: 5px 10px;
+                                }
+                            }
+                        }
+                        .shipping-calculator-form {
+                            display: none;
+                            float: left;
+                            padding: 5px 30px;
+                            background: @cyan;
+                            h3 {
+                                margin-top: 5px;
+                            }
+                            p {
+                                input, select, button {
+                                    width: 100%;
+                                }
+                                button {
+                                    padding: 5px 10px;
+                                    background: @primary;
+                                    border: 0;
+                                    color: @white;
+                                    &:hover {
+                                        background: @light-gray;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .product-thumbnail {
+                    width: 20%;
+                    img {
+                        .img-responsive;
+                        display: inline-block;
+                    }
+                }
+                .product-name {
+                    width: 15%;
+                    .variation {
+                        margin: 0;
+                        dt {
+                            display: none;
+                        }
+                        dd {
+                            font-size: 0.75em;
+                            line-height: 1;
+                            width: auto;
+                            display: inline-block;
+                            p {
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+                .product-price {
+                    width: 20%;
+                }
+                .product-quantity {
+                    width: 35%;
+                    .quantity {
+                        width: 40%;
+                        display: inline-block;
+                        input[type="button"] {
+                            width: 25%;
+                            background: @light-gray;
+                            border: 0;
+                            .lh-border-radius(0);
+                            color: @white;
+                            font-weight: bold;
+                            vertical-align: top;
+                            &:hover {
+                                background: @gray;
+                            }     
+                        }
+                        input[type="number"] {
+                            -moz-appearance: textfield;
+                            &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;                            
+                            }
+                            -webkit-appearance: none;
+                            text-align: center;
+                            height: 34px;
+                            width: 45%;
+                            margin: 0 2.5%;
+                            border: 1px solid @light-gray;
+                            color: @gray;
+                        }
+                    }
+                    button {
+                        display: inline-block;
+                        background: none;
+                        border: 0;
+                        color: green;
+                        &:before {
+                            font-family: FontAwesome;
+                            content: "\f021";
+                            font-size: 1.3em;
+                        }
+                        &:hover {
+                            color: @light-gray;
+                        }
+                    }
+                    .remove {
+                        display: inline-block;
+                        color: red;
+                        &:before {
+                            font-family: FontAwesome;
+                            content: "\f00d";
+                            font-size: 1.5em;
+                        }
+                        &:hover {
+                            color: @light-gray;
+                        }
+                    }
+                }
+                .product-subtotal {
+                    width: 10%;
+                }
+            }
+        }
+    }
+}

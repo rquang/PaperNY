@@ -33,14 +33,22 @@ if($parts[1] == 'product-category'){
 <div id="main">
 	<div class="container">
 		<div class="row">
-			<div id="searchbar" class="tab right">
+			<div class="tab right">
 				<a href="<?php echo site_url() ?>/shipping-delivery/">Shipping &amp; Delivery</a>
 				<a href="<?php echo site_url() ?>/return-policy/">Return Policy</a>
-				<span>Search</span>
-				<form>
-				    <input type="text" placeholder="Search..." required>
-				    <button type="submit"><span class="fa fa-search"></span></button>
-				</form>
+				<div id="searchbar">
+					<span>Search</span>
+					<form>
+					    <input type="text" placeholder="Search..." required>
+					    <button type="submit"><i class="fa fa-search"></i></button>
+					</form>					
+				</div>
+				<div id="shopping-cart">
+					<a href="<?php echo site_url()?>/cart">
+						<?php echo WC()->cart->get_cart_total(); ?>
+						<span class="items"><?php echo sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?> |</span>
+					</a>
+				</div>
 			</div>
 			<div id="product-filters">
 				<select name="category">
@@ -102,12 +110,14 @@ if($parts[1] == 'product-category'){
 			        	echo '</div>';
 			        }
 			    ?>
+			    <!--
 				<div id="shopping-cart" class="tab left cyan remove">
 					<a href="<?php echo site_url()?>/cart">
 						<span class="total"><?php echo WC()->cart->get_cart_total(); ?></span>
 						<span class="items"><?php echo sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?> |</span>
 					</a>
-				</div>					
+				</div>	
+				-->				
 			</div>
 			<div id="product-list">
 				<h2 class="title top"><span>Featured</span></h2>
@@ -160,7 +170,7 @@ if($parts[1] == 'product-category'){
 	</a>
 </div>
 <script>
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	var wrapper = $('#product-list .products');
 	var args = {'order':'price', 'type': 'product'};
 	<?php if(isset($args['product_cat'])){

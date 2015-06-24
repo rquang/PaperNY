@@ -2,18 +2,17 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width" />
-	<title>Paperny Entertainment</title>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/fancybox/jquery.fancybox.css">
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/fancybox/jquery.fancybox.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/functions.js"></script>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<?php wp_head(); ?>
 	<script>
-	$(document).ready(function(){
+	jQuery(document).ready(function($){
 		$('#header .top .content .mobile-menu').click(function(){
 			$('#header .top .content .nav-holder').toggle();
 		});
+
 		$('.fancybox').fancybox();
+		
 		if($(window).width() < 992) {
 			$('#mobile-nav').on("click", function(){
 				if ($(this).hasClass("active")) {
@@ -32,6 +31,7 @@
 				}
 			});
 		}
+
 		$('.search').click(function(){
 			var $t = $(this);
 			var action = '<?php echo site_url(); ?>';
@@ -41,11 +41,12 @@
 			$t.hide();
 			$t.parent().append('<form method="get" action="'+action+'" class="'+$t.prop('class')+'"><input type="text" name="s" placeholder="Search"></form>');
 		});
-	});
-	$(window).on('resize load', function(){
-		var h = $('#header .image img').outerHeight();
-		var max = parseInt($('#header .image').css('max-height'));
-		$('#header .image').css('height', (h > max ? max : h)+'px');
+
+		$(window).on('resize load', function(){
+			var h = $('#header .image img').outerHeight();
+			var max = parseInt($('#header .image').css('max-height'));
+			$('#header .image').css('height', (h > max ? max : h)+'px');
+		});
 	});
 	</script>
 </head>

@@ -1,0 +1,60 @@
+
+#awards {
+    height: 275px;
+    .slider {
+        height: inherit;
+        overflow: hidden;
+        .award {
+            height: inherit;
+            text-align: center;
+            line-height: 1.25;
+            font-family: @ptsans;
+            .image {
+                display: table-cell;
+                vertical-align: middle;
+                height: 150px;
+                img {
+                    margin: 0 auto;
+                    max-height: 150px;
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+            .name {
+                color: @primary;
+                font-weight: bold;
+            }
+        }
+    }
+    .left,
+    .right {
+        height: inherit;
+        text-align: center;
+        cursor: pointer;
+        padding-top: 10px;
+        position: relative;
+        &:before {
+            position: absolute;
+            line-height: 1;
+            font-family: FontAwesome;
+            color: @black;
+            font-size: 2em;
+            top: 25%;
+        }
+        &:hover {
+            &:before {
+                color: @secondary;
+            }
+        }
+    }
+    .left {
+        &:before {
+            content: "\f053"
+        }
+    }
+    .right {
+        &:before {
+            content: "\f054"
+        }
+    }
+}

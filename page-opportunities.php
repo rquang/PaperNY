@@ -89,7 +89,7 @@ $qawards = new WP_Query(array('posts_per_page'=>-1,'post_type'=>'pap_award'));
 	</div>
 </div>
 <script>
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	$('#awards .right').click(function(){
 		$('#awards .slider .award:first').appendTo('#awards .slider');
 	});

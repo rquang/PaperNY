@@ -1,0 +1,273 @@
+
+#sort-options {
+    .blue-bg;
+    overflow: hidden;
+    .controls {
+        span {
+            text-transform: uppercase;
+            color: @white;
+        }
+        ul {
+            text-transform: uppercase;
+            .unstyled-list;
+            li {
+                text-align: center;
+                color: @baby-blue;
+                position: relative;
+                cursor: pointer;
+                &:after {
+                    position: absolute;
+                    display: none;
+                    bottom: -12px;
+                    left: 50%;
+                    margin-left: -16px;
+                    content: "";
+                    border-left: 16px solid transparent;
+                    border-right: 16px solid transparent;
+                    border-bottom: 10px solid @baby-blue;
+                }
+                &.active,
+                &:hover {
+                    &:after {
+                        display: block;
+                    }
+                }
+                form {
+                    display: none;
+                }
+            }
+        }
+        #searchbar {
+            text-align: center;
+        }
+        select {
+            height: 28px;
+        }
+        a {
+            text-align: right;
+            color: @white;
+            text-decoration: none !important;
+            &:after {
+                margin-left: 10px;
+                font-family: FontAwesome;
+                content: "\f04b";
+            }
+            &:hover {
+                color: @secondary;
+            }
+        }
+    }
+}
+
+#filter {
+    position: relative;
+    z-index: 100;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    background: @light-gray;
+    .lh-transition(all 0.5s cubic-bezier(0, 1, 0.5, 1));
+    overflow-y: hidden;
+    max-height: 0;
+    >div {
+        min-height: 50px;
+        padding: 5px 0;
+        span {
+            text-align: center;
+            cursor: pointer;
+            &.active, &:hover {
+                color: @baby-blue;
+            }
+        }
+    }
+    &.open {
+        max-height: 300px;
+    }
+}
+
+#productions-container {
+    display: inline-block;
+    margin-bottom: 30px;
+    // &.lazyload {
+    //     text-align: center;
+    //     &:after {
+    //         .lh-opacity(0.75);
+    //         color: @gray;
+    //         font-size: 3em;
+    //         font-family: FontAwesome;
+    //         content: "\f013";
+    //         .fa-spin;
+    //     }
+    // }
+    .item {
+        margin-bottom: 15px;
+        .top {
+            position: relative;
+            max-height: 125px;
+            overflow: hidden;
+            .image {
+                img {
+                    .img-responsive;
+                }
+            }
+            span {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.75);
+                text-align: center;
+                padding: 10px 0;
+                h3 {
+                    color: @white;
+                    margin: 0;
+                    font-size: 1.2em;
+                }
+            }
+        }
+        .bottom {
+            height: 118px;
+            overflow: hidden;
+            .inner {
+                width: 100%;
+                height: inherit;
+                padding: 15px;
+                display: inline-block;
+                border-left: 1px solid @light-gray;
+                border-right: 1px solid @light-gray;
+                .excerpt {
+                    padding-left: 0;
+                    text-align: left;
+                    p {
+                        font-family: @ptsans;
+                        line-height: 1;
+                        color: @gray;
+                        font-size: 0.8em;
+                    }
+                }
+                .year,
+                .episodes {
+                    text-align: center;
+                    color: @gray;
+                }
+                .broadcaster {
+                    text-align: center;
+                    img {
+                        width: auto;
+                        height: auto;
+                        max-height: 35px;
+                        max-width: 100%;
+                        //.lh-filter(grayscale(100%));
+                    }
+                }
+            }
+        }
+        &:hover {
+            .top {
+                span {
+                    background: rgba(49, 101, 161, 0.75);
+                }
+            }
+        }
+    }
+}
+
+
+#staff-options {
+    .blue-bg;
+    .controls {
+        ul {
+            .unstyled-list;
+            display: table;
+            width: 100%;
+            li {
+                display: table-cell;
+                text-align: center;
+                a {
+                    color: @baby-blue;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    &:hover {
+                        color: @white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#staff {
+    .item {
+        margin-bottom: 30px;
+        .image {
+            padding-left: 0;
+            padding-right: 5px;
+            img {
+                .img-responsive;
+            }
+        }
+        .info {
+            background: @light-gray;
+            padding: 30px;
+            .name {
+                margin: 0 0 5px 0;
+                color: @primary;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            .position {
+                margin: 0 0 10px 0;
+                padding-bottom: 10px;
+                color: @baby-blue;
+                border-bottom: 1px solid @black;
+            }
+            .desc {
+                p {
+                    font-size: 90%;
+                    font-family: @ptsans;
+                }
+            }
+        }
+    }
+}
+
+#latest-container {
+    .item {
+        border-top: 1px solid @gray;
+        display: inline-block;
+        width: 100%;
+        padding-top: 15px;
+        margin-bottom: 15px;
+        .date {
+            text-transform: uppercase;
+            color: @baby-blue;
+        }
+        .info {
+            h2 {
+                margin: 0 0 15px 0;
+                color: @black;
+                font-weight: bold;
+            }
+            .image {
+                position: relative;
+                img {
+                    border: 1px solid @black;
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 10px;
+                }
+                .subtitle {
+                    position: absolute;
+                    top: 1px;
+                    left: 1px;
+                    background: @baby-blue;
+                    color: @white;
+                    padding: 2px 15px;
+                }
+            }
+            .excerpt {
+                font-family: @ptsans;
+                color: @black;
+            }
+        }
+    }
+}

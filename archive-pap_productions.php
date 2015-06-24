@@ -115,7 +115,7 @@ if(count($theposts)){
 	</a>
 </div>
 <script>
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	var wrapper = $('#productions-container');
 	var original = {order:'date',type:'productions',posts:12,broadcaster:0,genre:0};
 	var args = {order:'date',type:'productions',posts:12,broadcaster:0,genre:0};

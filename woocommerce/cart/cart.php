@@ -134,7 +134,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 <?php do_action( 'woocommerce_after_cart' ); ?>
 
 <script>
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	$("#shipping-btn").on("click",function(e){
 		e.preventDefault();
 		if(!$(".shipping-calculator-form").is(":visible")) {

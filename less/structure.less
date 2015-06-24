@@ -24,6 +24,7 @@
 /*------------------------------------*\
     General
 \*------------------------------------*/
+
 /*------------------------------------*\
     Header
 \*------------------------------------*/
@@ -510,6 +511,11 @@ header {
         .make-sm-column(6);
         .make-md-column(4);
     }
+    #customer_details {
+        >div {
+            .make-xs-column(12);
+        }
+    }
     #order_review { 
         .shop_table {
             .make-xs-column(12);
@@ -533,6 +539,20 @@ header {
             .make-md-column-offset(8);
             float: right;
         }
+    }
+}
+
+#thank-you {
+    .order_details {
+        .make-row;
+        li {
+            .make-xs-column(12);
+            .make-sm-column(4);
+        }
+    }
+    .address {
+        .make-xs-column(12);
+        .make-md-column(6);
     }
 }
 

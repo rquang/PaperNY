@@ -97,7 +97,7 @@
 	</a>
 </div>
 <script>
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	var original = {order:'date',type:'news',posts:8};
 	var args = {order:'date',type:'news',posts:8};
 	$("#searchbar >span").on("click",function(){

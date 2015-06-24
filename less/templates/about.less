@@ -1,0 +1,50 @@
+
+#about {
+    margin-bottom: 30px;
+    .contact {
+        .location {
+            cursor: pointer;
+            margin-bottom: 15px;
+            &.active {
+                color: @baby-blue;
+                h2 {
+                    border-bottom-color: @baby-blue;
+                    &:after {
+                        line-height: 1;
+                        font-family: FontAwesome;
+                        content: "\f105";
+                        margin-left: 10px;
+                    }
+                }
+            }
+            h2 {
+                margin: 0 0 5px 0;
+                padding-bottom: 10px;
+                border-bottom: 1px solid @black;
+                text-transform: uppercase;
+            }
+            .address {
+                font-family: @ptsans;
+            }
+            .phones {
+                .unstyled-list;
+                font-family: @ptsans;
+            }
+        }
+    }
+    .map {
+        position: relative;
+        height: 450px;
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border: 0;
+            height: 100%;
+            &:last-child {
+                z-index: -1;
+            }
+        }
+    }
+}

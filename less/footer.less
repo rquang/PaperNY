@@ -1,0 +1,40 @@
+
+footer {
+    background: @primary;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    .logo {
+        img {
+            .img-responsive;
+        }
+    }
+    .links {
+        margin-top: 30px;
+        ul {
+            .unstyled-list;
+            text-align: right;
+            border-top: 1px solid @baby-blue;
+            li {
+                display: inline-block;
+                &:last-child {
+                    a {
+                        padding-right: 0;
+                    }
+                }
+                a {
+                    color: @baby-blue;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 5px 15px;
+                    &:hover {
+                        color: @secondary;
+                    }
+                }
+            }
+        }
+    }
+    .copy {
+        text-align: right;
+        color: @baby-blue;
+    }
+}

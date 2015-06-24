@@ -84,7 +84,7 @@
 	</div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	var $obj = $('#production .slideshow');
 	if($('#production .gallery, #production video').length){
 		var limit = 6;

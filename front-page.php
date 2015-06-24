@@ -18,7 +18,7 @@ foreach($airings as $a){
 echo ']</script>';
 ?>
 <script>
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	var air_active = 0;
 	var caption = $('#slider .caption .content');
 	$("#slider .left, #slider .right").on('click', function(){
